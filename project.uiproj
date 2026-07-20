@@ -1,0 +1,6 @@
+{
+  "Name": "doc_split_extract",
+  "ProjectType": "Process",
+  "Description": "회생법원 통지서 split",
+  "MainFile": "Main.xaml"
+}
