@@ -61,5 +61,8 @@
   "UiPath.UIAutomationNext.Activities.Logging.TargetSearchLogLevel": "Off",
   "UiPath.UIAutomationNext.Activities.Logging.TargetSearchPerformanceLogLevel": "Off",
   "UiPath.UIAutomationNext.Activities.Logging.AuditLogLevel": "Trace",
-  "UiPath.UIAutomationNext.Activities.Logging.EnableActivityTracing": "False"
+  "UiPath.UIAutomationNext.Activities.Logging.EnableActivityTracing": "False",
+  "UiPath.UIAutomationNext.Activities.Logging.SearchLog": "False",
+  "UiPath.UIAutomationNext.Activities.Logging.SearchPerformanceLog": "False",
+  "UiPath.UIAutomationNext.Activities.Logging.EnableAuditLog": "True"
 }
