@@ -141,7 +141,7 @@
       <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ReadOCR" sap:VirtualizedContainerService.HintSize="738,3811.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ReadOCR" sap:VirtualizedContainerService.HintSize="818.8000000000001,3780.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="str_text" />
       <Variable x:TypeArguments="x:Int32" Name="int_page_count" />
@@ -153,13 +153,13 @@
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="588.8,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[String.Format(&quot;{0} - Split 시작 {1}&quot;, in_str_file_path, Now.ToString(&quot;hh:mm:ss&quot;))]" />
     <upap:GetPDFPageCount DisplayName="Get PDF Page Count - int_page_count (GetPDFPageCount)" FileName="[in_str_file_path]" sap:VirtualizedContainerService.HintSize="588.8,92" sap2010:WorkflowViewState.IdRef="GetPDFPageCount_2" PageCount="[int_page_count]" />
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[in_dt_rule_table]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="588.8,3356" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[in_dt_rule_table]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="588.8,3325.6" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="555.2,3207.2" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="555.2,3176.8" sap2010:WorkflowViewState.IdRef="Sequence_6">
             <Sequence.Variables>
               <Variable x:TypeArguments="s:String[]" Name="arr_헤더키워드" />
               <Variable x:TypeArguments="s:String[]" Name="arr_포함키워드1" />
@@ -172,7 +172,6 @@
               <Variable x:TypeArguments="s:String[]" Name="arr_포함키워드4" />
               <Variable x:TypeArguments="x:Boolean" Name="is_포함키워드4" />
               <Variable x:TypeArguments="x:Boolean" Name="is_미포함키워드" />
-              <Variable x:TypeArguments="x:Boolean" Name="is_헤더키워드" />
               <Variable x:TypeArguments="x:String" Name="str_header" />
               <Variable x:TypeArguments="x:String" Name="str_output_path" />
               <Variable x:TypeArguments="x:String" Name="str_output" />
@@ -182,13 +181,13 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:ForEach x:TypeArguments="x:Int32" CurrentIndex="{x:Null}" DisplayName="For Each currentNumber" sap:VirtualizedContainerService.HintSize="521.6,3147.2" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[Enumerable.Range(1, int_page_count)]">
+            <ui:ForEach x:TypeArguments="x:Int32" CurrentIndex="{x:Null}" DisplayName="For Each currentNumber" sap:VirtualizedContainerService.HintSize="521.6,3116.8" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[Enumerable.Range(1, int_page_count)]">
               <ui:ForEach.Body>
                 <ActivityAction x:TypeArguments="x:Int32">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:Int32" Name="currentNumber" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="본문" sap:VirtualizedContainerService.HintSize="520,3025.6" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <Sequence DisplayName="본문" sap:VirtualizedContainerService.HintSize="520,2995.2" sap2010:WorkflowViewState.IdRef="Sequence_5">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="x:Boolean" Name="is_split_next" />
                       <Variable x:TypeArguments="x:String" Name="str_case_num" />
@@ -279,7 +278,7 @@
                               <OutArgument x:TypeArguments="x:String">[str_text]</OutArgument>
                             </ui:AssignOperation.To>
                             <ui:AssignOperation.Value>
-                              <InArgument x:TypeArguments="x:String">[str_text.Replace("사견","사건").Replace("사걸","사건").Replace("체무자","채무자").Replace("채투자","채무자")]</InArgument>
+                              <InArgument x:TypeArguments="x:String">[str_text.Replace("사견","사건").Replace("사걸","사건").Replace("사,건","사건").Replace("체무자","채무자").Replace("채투자","채무자")]</InArgument>
                             </ui:AssignOperation.Value>
                           </ui:AssignOperation>
                           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_8">
@@ -294,7 +293,7 @@
                       </ui:MultipleAssign.AssignOperations>
                     </ui:MultipleAssign>
                     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="486.4,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[str_text]" />
-                    <ui:MultipleAssign sap2010:Annotation.AnnotationText="is_split_next : 다음 장 포함 여부" DisplayName="Multiple Assign - split 조건변수" sap:VirtualizedContainerService.HintSize="486.4,569.6" sap2010:WorkflowViewState.IdRef="MultipleAssign_5">
+                    <ui:MultipleAssign sap2010:Annotation.AnnotationText="is_split_next : 다음 장 포함 여부" DisplayName="Multiple Assign - split 조건변수" sap:VirtualizedContainerService.HintSize="486.4,539.2" sap2010:WorkflowViewState.IdRef="MultipleAssign_5">
                       <ui:MultipleAssign.AssignOperations>
                         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
                           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_23">
@@ -351,14 +350,6 @@
                             </ui:AssignOperation.To>
                             <ui:AssignOperation.Value>
                               <InArgument x:TypeArguments="s:String[]">[CurrentRow("KEY_NCONTAIN").ToString.Split(",".ToCharArray)]</InArgument>
-                            </ui:AssignOperation.Value>
-                          </ui:AssignOperation>
-                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_20">
-                            <ui:AssignOperation.To>
-                              <OutArgument x:TypeArguments="x:Boolean">[is_헤더키워드]</OutArgument>
-                            </ui:AssignOperation.To>
-                            <ui:AssignOperation.Value>
-                              <InArgument x:TypeArguments="x:Boolean">[arr_헤더키워드.Any(Function(r) str_text.Contains(r))]</InArgument>
                             </ui:AssignOperation.Value>
                           </ui:AssignOperation>
                           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_14">
@@ -457,7 +448,7 @@
                         </Sequence>
                       </If.Else>
                     </If>
-                    <If Condition="[is_헤더키워드 = True And is_포함키워드1 = True And is_포함키워드2 = True And is_포함키워드3 = True And is_포함키워드4 = True And is_미포함키워드 = False]" sap:VirtualizedContainerService.HintSize="486.4,1371.2" sap2010:WorkflowViewState.IdRef="If_1">
+                    <If Condition="[is_포함키워드1 = True And is_포함키워드2 = True And is_포함키워드3 = True And is_포함키워드4 = True And is_미포함키워드 = False]" sap:VirtualizedContainerService.HintSize="486.4,1371.2" sap2010:WorkflowViewState.IdRef="If_1">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>

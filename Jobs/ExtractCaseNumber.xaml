@@ -102,7 +102,7 @@
         <OutArgument x:TypeArguments="x:String">[io_str_case_num]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Match(io_str_case_num, "\d{4}[가-힣]{2,3}\d{3,4}").Value]</InArgument>
+        <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Match(io_str_case_num, "\d{4}[가-힣]{2,3}\d{1,4}").Value]</InArgument>
       </Assign.Value>
     </Assign>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="449.6,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[io_str_case_num]" />
